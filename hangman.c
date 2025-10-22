@@ -1,5 +1,5 @@
 // AE, JL, EG, XP, EM 7th Hangman Video Game
-// Addie Erickson made ripository + overall debugging + adding code that the others coded while at home
+// Addie Erickson made repository + overall debugging + adding code that the others coded while at home
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h> // for srand
@@ -31,6 +31,9 @@ int main(void){
     char username[20];
     printf("Welcome to Hangman! What is your username?\n");
     scanf("%s", &username);
+
+
+
 //Xander P, general game logic and function
     char guessed_letters[50]; //makes a list of guessed letters
     const char *chosen_word = "blue";
@@ -41,7 +44,7 @@ int main(void){
 }
 
     for(int i = 0; i < chosen_word; i++){
-        if (chosen_word[i] != '_'){
+        }if (chosen_word[i] != '_'){
         display[i] = '_'
     }
 }
