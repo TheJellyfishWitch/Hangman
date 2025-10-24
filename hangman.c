@@ -13,7 +13,7 @@
 void display_hangman(int wrong){
 //Eva Gilbert + Jovie Lineback, making the board
     if(wrong == 0){
-        printf(" |__| \n |  \n| \n| \n|______ \n");
+        printf("|__| \n|  \n| \n| \n|______ \n");
     } else if (wrong == 1){
         printf(" |__| \n |  0  \n | \n | \n |______ \n");
     } else if (wrong == 2){
@@ -32,8 +32,7 @@ void display_hangman(int wrong){
 int main(void){
     
     // word list containing words for the hangman game
-    
-    const char *word_list[] = {"pancakes", "waffles","burgers", "cinnamonrolls", "cake", "pizza", "supercalifragilisticexpialidocious", "jumpsuit","pneumonoultramicroscopicsilicovolcanoconiosis", "minions", "microsopic","water","apples","radioactive","pasta","tortellini","jellyfish","fruitsnacks", "space", "red","stingray","octopus","bike","pinapples", "peices", "cherries", ":)", "harold","supernova","hangman", "invincible", "python", "code", "go", "cancer", "atmosphere", "dyslexic", "big", "vector", "fortnite", "freddyfazbear", "mcdonalds", "programmers", "glasses", "because", "c", "yesterday", "computer", "mcdonalds", "discumbobulate", "meow" ,"bored", "hawk", "batman", "spiderman", "q", "no", "greengoblin", "shootingstars"};
+    char *word_list[] = {"pancakes", "waffles","burgers", "cinnamonrolls", "cake", "pizza", "supercalifragilisticexpialidocious", "jumpsuit","pneumonoultramicroscopicsilicovolcanoconiosis", "minions", "microsopic","water","apples","radioactive","pasta","tortellini","jellyfish","fruitsnacks", "space", "red","stingray","octopus","bike","pinapples", "cherries", "harold","supernova","hangman", "invincible", "python", "code", "go", "cancer", "atmosphere", "dyslexic", "big", "vector", "fortnite", "freddyfazbear", "mcdonalds", "programmers", "glasses", "because", "c", "yesterday", "computer", "mcdonalds", "discumbobulate", "meow" ,"bored", "hawk", "batman","" "spiderman", "no", "greengoblin", "q", "shootingstars",};
     
     //gets how much spaces the word chosen has
 
@@ -51,7 +50,7 @@ int main(void){
     }
     guessed[word_len] = '\0';
     
-    //keeps count of tries and guessed letters
+    // keeps count of tries and guessed letters
     
     int tries = MAX_TRIES;
     char guessed_letters[26] = {0};
@@ -64,7 +63,7 @@ int main(void){
         printf("Guessed letters: ");
         for (int i = 0; i < guessed_count; i++) {
             printf("%c ", guessed_letters[i]);
-        }
+        } //makes word bank of guessed letters
         printf("\n");
         display_hangman(MAX_TRIES - tries);
         printf("Enter a letter: ");
@@ -76,7 +75,7 @@ int main(void){
             if (guessed_letters[i] == guess) {
                 already_guessed = 1;
                 break;
-            }
+            } // subtracts life if incorrect letter
         }
 
     // tells the user if they've already guessed the letter
@@ -109,7 +108,7 @@ int main(void){
         }
     }
     
-    // tells the user when they ran out of tries to guess the letter
+    // tells the user when they ran out of tries to guess the word
 
     if (tries == 0) {
         display_hangman(MAX_TRIES);
